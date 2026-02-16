@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   const [cidade, setCidade] = useState("")
   const [informacoes, setInformacoes] = useState(null)
+  const [erro, setErro] = useState(null)
 
   const chaveApi = "f914b76d9e143dfa64dd1e1eb94bf720"
   const api = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&lang=pt-br&units=metric&appid=${chaveApi}`
@@ -15,10 +16,20 @@ function App() {
 
   async function enviarFormulariuo(e) {
     e.preventDefault()
-    const resposta = await fetch(api)
-    const json = await resposta.json()
-    console.log(json)
-    setInformacoes(json)
+    try {
+      const resposta = await fetch(api)
+      const json = await resposta.json()
+      if(json.cod === 200) {
+        setInformacoes(json)
+        setErro(null)
+      } else {
+        setInformacoes(null)
+        setErro("Digite uma cidade válida!")
+      }
+    } catch(err) {
+      setErro("Erro ao buscar os dados!")
+      setInformacoes(null)
+    }
   }
 
   return (
@@ -26,11 +37,12 @@ function App() {
       <Header />
       <div className="card">
         <form onSubmit={enviarFormulariuo} method="post">
-            <input onChange={capturarInput} type="text" value={cidade} />
+            <input onChange={capturarInput} required type="text" value={cidade} />
             <button type="submit">
                 <i className="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
+        {erro !== null? <p>{erro}</p>: null}
         {informacoes ? <div className="infos">
           <div className="info-principal">
             <div>
