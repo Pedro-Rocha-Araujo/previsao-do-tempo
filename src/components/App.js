@@ -42,16 +42,14 @@ function App() {
                 <i className="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
-        {erro !== null? <p>{erro}</p>: null}
+        {erro !== null? <p className="erro">{erro}</p>: null}
         {informacoes ? <div className="infos">
           <div className="info-principal">
-            <div>
-              <h2>{informacoes.name}</h2>
-              <p>{informacoes.main.temp}°</p>
-            </div>
-            <div className="campo-imagem">
               <img src={`http://openweathermap.org/img/wn/${informacoes.weather[0].icon}.png`} />
-            </div>
+              <div>
+                <h2>{informacoes.name}</h2>
+                <p>{informacoes.main.temp}°</p>
+              </div>
           </div>
           <div className="infos-secundarias">
             <div className="info-secundaria">

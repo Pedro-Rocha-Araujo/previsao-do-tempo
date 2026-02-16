@@ -27,8 +27,8 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.4rem, 4vw, 1.9rem);
-    margin-bottom: 12px;
+    font-size: clamp(2rem, 4vw, 2.2rem);
+    margin-bottom: 2px;
 }
 
 h3 {
@@ -64,9 +64,9 @@ div.main {
 div.card {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 28px;
     align-items: center;
-    padding: 22px 5px;
+    padding: 28px 5px;
 }
 
 form {
@@ -98,37 +98,34 @@ div.infos {
     background-color: #fc370c;
     color: #fff;
     width: 100%;
-    max-width: 28rem;
-    padding: 44px 16px;
-    border-radius: 2rem;
+    max-width: 26rem;
+    padding: 16px 2px 36px 2px;
+    border-radius: 4rem;
 }
 
 div.info-principal {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    margin-bottom: 22px;
 }
 
 div.info-principal div {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    width: 50%;
-}
-
-div.campo-imagem {
-    display: flex;
-    justify-content: center;
+    gap: 24px;
 }
 
 img {
-    width: 60px;
+    width: 72px;
 }
 
 div.infos-secundarias {
     display: flex;
-    gap: 2px;
+    justify-content: center;
+    gap: 4px;
 }
 
 div.info-secundaria {
@@ -139,12 +136,21 @@ div.info-secundaria {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-radius: 1.6rem;
-    padding: 22px 0;
+    max-width: 120px;
+    aspect-ratio: 1/1;
+    border-radius: 1.8rem;
 }
 
 div.info-secundaria div {
     display: flex;
     gap: 4px;
     align-items: center;
+}
+
+p.erro {
+    background-color: #fc370c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 1.2rem;
+    text-align: center;
 }
