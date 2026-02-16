@@ -137,7 +137,7 @@ div.info-secundaria {
     align-items: center;
     width: 100%;
     max-width: 120px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/3;
     border-radius: 1.8rem;
 }
 
