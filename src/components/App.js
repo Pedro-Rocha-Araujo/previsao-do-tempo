@@ -37,7 +37,7 @@ function App() {
       <Header />
       <div className="card">
         <form onSubmit={enviarFormulariuo} method="post">
-            <input onChange={capturarInput} required type="text" value={cidade} />
+            <input onChange={capturarInput} placeholder="Digite a cidade que deseja pesquisar" required type="text" value={cidade} />
             <button type="submit">
                 <i className="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -46,10 +46,8 @@ function App() {
         {informacoes ? <div className="infos">
           <div className="info-principal">
               <img src={`http://openweathermap.org/img/wn/${informacoes.weather[0].icon}.png`} />
-              <div>
-                <h2>{informacoes.name}</h2>
-                <p>{informacoes.main.temp}°</p>
-              </div>
+              <h2>{informacoes.name}</h2>
+              <p>{informacoes.main.temp}°</p>
           </div>
           <div className="infos-secundarias">
             <div className="info-secundaria">
